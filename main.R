@@ -17,7 +17,7 @@ cat("\014")
 options(warn=-1)
 dir.create("plots", showWarnings=F, mode="0777")
 
-db = read.csv("W82000075.csv", header=T, col.names=c("id", "easting", "northing", "veicoli_coinvolti", "persone_coinvolte", "data", "ora", "classe_strada", "condizioni_asfalto", "illuminazione", "meteo", "classe_vittima", "gravità_vittima", "sesso", "età", "tipo_veicolo"))
+db = read.csv("dataset.csv", header=T, col.names=c("id", "easting", "northing", "veicoli_coinvolti", "persone_coinvolte", "data", "ora", "classe_strada", "condizioni_asfalto", "illuminazione", "meteo", "classe_vittima", "gravità_vittima", "sesso", "età", "tipo_veicolo"))
 db$data = as.Date(db$data, format="%d/%m/%Y")
 db$tipo_veicolo = replace(db$tipo_veicolo, db$tipo_veicolo == 90, 23)
 db$tipo_veicolo = replace(db$tipo_veicolo, db$tipo_veicolo == 97, 24)
